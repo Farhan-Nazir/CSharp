@@ -16,13 +16,7 @@ namespace CSharp.Beginner
         }
         public int GetShippingMethod(string method)
         {
-            if(method == "RegularMail")
-            {
-                return (int)shippingMethod.RegularMail;
-            } else if(method == "ExpressMail")
-            {
-                return (int)shippingMethod.ExpressMail;
-            }
+           // method == true ? Convert.ToInt32(shippingMethod.RegularMail) : (int)shippingMethod.ExpressMail;
             return 0;
         }
     }
