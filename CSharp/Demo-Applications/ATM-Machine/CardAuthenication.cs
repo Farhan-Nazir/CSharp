@@ -24,22 +24,18 @@ namespace CSharp.Demo_Applications.ATM_Machine
             CardExpiryDate = cardExpiryDate;
         }
 
-        private List<string> Database()
-        {
-            var cardHolders = new List<string>() { "Farhan Nazir", "Seif Tabaja" };
-            return cardHolders;
-        }
-
         public void ValidateCard()
         {
-            var testCard = new AppData(CardHolder, CardType, CardNumber, CardCSV, CardExpiryDate);
-            var cardInfo = testCard.AllCardsInfo();
-            Console.WriteLine("Total Cards" + cardInfo.Count);
-            foreach (var card in cardInfo)
+            Console.WriteLine("Please enter your Pin: ");
+            var cardPin = Convert.ToInt32(Console.ReadLine());
+            var incominCard = new AppData(CardHolder, CardType, CardNumber, CardCSV, CardExpiryDate, cardPin);
+            var cardInfo = incominCard.AllCardsInfo();
+           // Console.WriteLine(cardInfo);
+            foreach (var item in cardInfo)
             {
-                Console.WriteLine("Card Info: {0}", card);
-
+                Console.WriteLine(item);
             }
+          
             //foreach (var cardHolderName in Database())
             //{
             //    Console.WriteLine("Please enter your Pin: ");
@@ -56,6 +52,10 @@ namespace CSharp.Demo_Applications.ATM_Machine
             //    }
             //}
 
+        }
+        private string GetValueOfObject(object obj,string propertyName)
+        {
+            return Convert.ToString(obj.GetType().GetProperty(propertyName).GetValue(obj, null));
         }
     }
 }

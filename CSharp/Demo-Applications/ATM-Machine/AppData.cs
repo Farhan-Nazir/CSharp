@@ -13,15 +13,17 @@ namespace CSharp.Demo_Applications.ATM_Machine
         public int CardCSV;
         public DateTime CardExpiryDate;
         private int CardPin;
+        public List<object> AllCards;
         
 
-        public AppData (string cardHolder, string cardType, int cardNumber, int cardCsv, DateTime cardExpiryDate)
+        public AppData (string cardHolder, string cardType, int cardNumber, int cardCsv, DateTime cardExpiryDate, int cardPin)
         {
             CardHolder = cardHolder;
             CardType = cardType;
             CardCSV = cardCsv;
             CardNumber = cardNumber;       
             CardExpiryDate = cardExpiryDate;
+            CardPin = cardPin;
         }
 
 
@@ -33,16 +35,18 @@ namespace CSharp.Demo_Applications.ATM_Machine
                 cardType = CardType,
                 cardCsv = CardCSV,
                 cardNumber = CardNumber,
-                cardExpiryDate = CardExpiryDate
+                cardExpiryDate = CardExpiryDate,
+                cardPin = CardPin
             };
             return newcard;
         }
 
         public List<object> AllCardsInfo()
         {
-            var cards = new List<object>();
-            cards.Add(NewCard());
-            return cards;
+            AllCards = new List<object>();
+           AllCards.Add(NewCard());
+           
+            return AllCards;
         }
     }
 }
