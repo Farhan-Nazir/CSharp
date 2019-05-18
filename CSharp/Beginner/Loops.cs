@@ -5,7 +5,9 @@ namespace CSharp.Beginner
     {
         public void GenerateEvenNumbers()
         {
-            for (int i = 0; i < 100; i++)
+            const int limit = 10;
+
+            for (int i = 0; i < limit; i++)
             {
                 if(i%2 == 0)
                 {
