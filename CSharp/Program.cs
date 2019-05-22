@@ -35,8 +35,14 @@ namespace CSharp
             // Console.WriteLine("Farhan is {0} years old", farhanAge);
             // 
 
-            var atmSystem = new Demo_Applications.ATM_Machine.Main();
-            atmSystem.Start();
+            //var atmSystem = new Demo_Applications.ATM_Machine.Main();
+            //atmSystem.Start();
+            //var ageCalculator = new DemoApplications.AgeCalculator.Main();
+            //ageCalculator.StartProgram();
+            var webIntegration = new Intermediate.WebIntegration(new Intermediate.Logger());
+            webIntegration.StartIntegration();
+            var dependenciesInstaller = new Intermediate.DependenciesInstaller(new Intermediate.Logger());
+            dependenciesInstaller.DependenciesInstallerStarted();
             Console.ReadLine();
         }
     }
