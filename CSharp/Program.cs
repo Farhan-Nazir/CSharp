@@ -39,10 +39,8 @@ namespace CSharp
             //atmSystem.Start();
             //var ageCalculator = new DemoApplications.AgeCalculator.Main();
             //ageCalculator.StartProgram();
-            var webIntegration = new Intermediate.WebIntegration(new Intermediate.Logger(), new Intermediate.SuccessMessage());
-            webIntegration.StartIntegration();
-            var dependenciesInstaller = new Intermediate.DependenciesInstaller(new Intermediate.Logger());
-            dependenciesInstaller.DependenciesInstallerStarted();
+            var stopWatch = new DemoApplications.StopWatch.Main();
+            stopWatch.StartTimer();
             Console.ReadLine();
         }
     }
